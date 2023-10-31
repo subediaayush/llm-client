@@ -57,7 +57,7 @@ function App() {
   const [messages, setMessages] = useState<IMessage[]>([])
 
   const supportedModels = [
-    'open_clip', 'whisper'
+    'open_clip', 'whisper', 'gpt4all'
   ]
 
   const onReceivedFromRemote = (data: any, type?: IMessageType, err?: any) => {
