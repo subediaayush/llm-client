@@ -52,14 +52,14 @@ const MessageView = (message: IMessage) => {
 
 function App() {
 
-  const [model, setModel] = useState('open_clip')
   const [textPrompt, setTextPrompt] = useState('')
   const [messages, setMessages] = useState<IMessage[]>([])
 
   const supportedModels = [
-    'open_clip', 'whisper', 'gpt4all'
+    'gpt4all', 'open_clip', 'whisper'
   ]
 
+  const [model, setModel] = useState(supportedModels[0])
   const onReceivedFromRemote = (data: any, type?: IMessageType, err?: any) => {
     if (err) {
       setMessages(m => [...m, {
